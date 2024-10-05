@@ -17,15 +17,15 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "kartheek1"  # Specify the S3 bucket for storing the state file
+    bucket         = "kartheek12345"  # Specify the S3 bucket for storing the state file
     key            = "terraform.tfstate"
-    region         = "us-east-1"
+    region         = "ap-south-1"
     dynamodb_table = "terraform_lock_table"  # Use DynamoDB for state locking
   }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 locals {
