@@ -17,8 +17,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "kartheek12345"  # Specify the S3 bucket for storing the state file
-    key            = "terraform.tfstate"
+    bucket         = "kartheek12345678"  # Specify the S3 bucket for storing the state file
+    key            = "kartheek"
     region         = "ap-south-1"
     dynamodb_table = "terraform_lock_table"  # Use DynamoDB for state locking
   }
@@ -99,7 +99,7 @@ resource "aws_key_pair" "assignment_key" {
 
 resource "aws_instance" "six" {
   subnet_id          = aws_subnet.two.id
-  ami                = "ami-0ebfd941bbafe70c6"
+  ami                = "ami-078264b8ba71bc45e"
   instance_type      = "t2.micro"
   key_name           = aws_key_pair.assignment_key.key_name
   associate_public_ip_address = true
